@@ -14,6 +14,10 @@
     "postcss": "8.4.29",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "3.3.3",
+    "react-icons": "^4.9.0",
+    "firebase": "^9.22.1",
+    "framer-motion": "^10.16.4"
+
   }
 }

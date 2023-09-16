@@ -1,0 +1,41 @@
+.navOption {
+  transition: 0.5s ease 0s;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  width: fit-content;
+}
+
+.navOption:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background-color: #ce9556;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.navOption:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+header .active {
+  color: #ce9556 !important;
+  transition: 0.2s ease 0s;
+}
+
+.wallpaperHome {
+  background-image: url("../../public/assets/images/tattooHand.jpg");
+  background-size: cover; 
+  background-position: center center; 
+}
