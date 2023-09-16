@@ -1,5 +1,5 @@
 import React from "react";
-import artist from "../public/assets/images/aris-blanco-negro.jpg";
+import artist from "../public/assets/images/aris-blanco-negro.JPG";
 import { motion } from "framer-motion";
 import UseGetAnimation from "../hooks/UseGetAnimation.jsx";
 import LogoSvg from "../components/LogoSvg";
