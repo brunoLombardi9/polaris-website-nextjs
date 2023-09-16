@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import UseGetAnimation from "../hooks/UseGetAnimation";
-import ContactForm from "../components/contactForm.jsx";
+import ContactForm from "../components/ContactForm.jsx";
 import SocialMedia from "../components/SocialMedia.jsx";
 import "../components/css/Contacto.css";
 
