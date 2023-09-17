@@ -42,15 +42,16 @@ const Navbar = () => {
           } flex flex-col md:flex-row justify-center overflow-hidden md:opacity-100 gap-4 md:gap-8 ${transitions} `}
         >
           {navOptions.map((option) => (
-            <div key={option.name}>
-              <Link
-                href={option.url}
-                className="text-xl navOption ms-4"
-                onClick={closeNav}
-              >
-                {option.name}
-              </Link>
-            </div>
+            <Link
+              key={option.name}
+              href={option.url}
+              className={`text-xl navOption ms-4 ${
+                pathname.split("/")[1] === option.name && "active"
+              }`}
+              onClick={closeNav}
+            >
+              {option.name}
+            </Link>
           ))}
         </nav>
 
