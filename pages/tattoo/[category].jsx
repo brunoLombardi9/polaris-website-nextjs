@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import UseGetCollection from "../../hooks/UseGetCollection";
-import TattoosCard from "../../components/TattoosCard";
 import { motion } from "framer-motion";
 import UseGetAnimation from "../../hooks/UseGetAnimation";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import ItemsView from "@/components/ItemsView";
 
 const TattooView = () => {
   const allTattoos = UseGetCollection("tattoos");
@@ -26,7 +26,7 @@ const TattooView = () => {
 
   useEffect(() => {
     setCategory(router.query.category);
-  }, [router.query.category]);
+  }, [router]);
 
   return (
     <div className="w-full text-white mt-[30px]">
@@ -66,16 +66,10 @@ const TattooView = () => {
       </motion.div>
 
       <motion.div
-        className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-center p-5 "
+        className="w-full mb-5"
         style={{ ...animation, transition: animation.transition + "0.6s" }}
       >
-        {content.length > 0 ? (
-          content.map((tattoo) => (
-            <TattoosCard obj={tattoo} key={tattoo.title} />
-          ))
-        ) : (
-          <h2 className="text-center">No se encontraron resultados</h2>
-        )}
+        <ItemsView content={content} />
       </motion.div>
     </div>
   );

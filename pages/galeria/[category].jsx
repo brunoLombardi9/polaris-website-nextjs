@@ -23,7 +23,7 @@ const Galeria = () => {
 
   useEffect(() => {
     setCategory(router.query.category);
-  }, [router.query.category]);
+  }, [router]);
 
   return (
     <div className="w-full text-white mt-[30px]">

@@ -19,7 +19,7 @@ const Home = () => {
         ref={firstElement.ref}
         style={firstElement.animation}
       >
-        <h1 className=" text-8xl text-white mb-9">Polaris</h1>
+        <h1 className=" text-8xl text-white mb-9">Polaris studio</h1>
         <p className=" text-2xl md:text-5xl mx-4">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
           ratione eos voluptate ad aperiam.
