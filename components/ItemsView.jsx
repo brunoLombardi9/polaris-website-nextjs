@@ -3,17 +3,15 @@ import TattoosCard from "./TattoosCard";
 
 const ItemsView = ({ content }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 8;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const totalPages = Math.ceil(content.length / itemsPerPage);
   const currentItems = content.slice(indexOfFirstItem, indexOfLastItem);
   const pages = [];
 
-  for (let index = 0; index <= totalPages; index++) {
-    if (index > 0) {
-      pages.push(index);
-    }
+  for (let index = 1; index <= totalPages; index++) {
+    pages.push(index);
   }
 
   useEffect(() => {
@@ -38,8 +36,7 @@ const ItemsView = ({ content }) => {
               key={page}
               onClick={() => setCurrentPage(page)}
               className={`p-4 border-2 rounded hover:opacity-50 ${
-                page === currentPage &&
-                "bg-orange border-orange text-black hover:opacity-100"
+                page === currentPage && "bg-orange border-orange text-black"
               }`}
             >
               {page}

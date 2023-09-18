@@ -76,7 +76,7 @@ const Navbar = () => {
         <Image
           src={wallpaper}
           alt="tatuador"
-          className="h-[300px] md:h-[450px] object-cover"
+          className="h-[300px] md:h-[450px] object-cover w-full"
         />
       )}
     </>

@@ -36,15 +36,14 @@ const Galeria = () => {
       </motion.h1>
 
       <motion.p
-        className="text-center mt-5 md:max-w-[500px] mx-auto"
+        className="text-center md:text-2xl mt-5 md:max-w-[500px] mx-auto"
         style={{ ...animation, transition: animation.transition + "0.2s" }}
       >
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-        similique, eos nesciunt aliquam unde sit libero perferendis consequuntur
-        vero pariatur.
+        similique.
       </motion.p>
       <motion.div
-        className="w-full flex justify-center items-center gap-5 my-8"
+        className="w-full flex justify-center items-center gap-2 md:gap-5 my-8"
         style={{ ...animation, transition: animation.transition + "0.4s" }}
       >
         {options.map((opt) => (
@@ -52,7 +51,7 @@ const Galeria = () => {
             <button
               key={opt}
               value={opt}
-              className={`menuBtns py-3 w-[80px] md:w-[100px] font-bold border-2 ease-in-out duration-200 rounded ${
+              className={`py-3 px-2 md:px-4 font-bold border-2 ease-in-out duration-200 rounded ${
                 category === opt
                   ? "border-orange text-orange"
                   : "hover:border-orange hover:text-orange"
