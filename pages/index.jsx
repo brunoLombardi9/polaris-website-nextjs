@@ -1,7 +1,9 @@
 import React from "react";
 import artist from "../public/assets/images/aris-blanco-negro.jpg";
+// import artist from "../public/assets/images/4CF9DD1B-C765-482E-966A-5E6CC85FB02E - copia.jpeg";
 import redFlower from "../public/assets/images/flor roja.jpeg";
-import blackNWhiteFlower from "../public/assets/images/flor blanco y negro.jpeg";
+// import blackNWhiteFlower from "../public/assets/images/flor blanco y negro.jpeg";
+import blackNWhiteFlower from "../public/assets/images/tabla.jpeg";
 import { motion } from "framer-motion";
 import UseGetAnimation from "../hooks/UseGetAnimation.jsx";
 import LogoSvg from "../components/LogoSvg";
@@ -24,11 +26,11 @@ const Home = () => {
         ref={firstElement.ref}
         style={firstElement.animation}
       >
-        <h1 className=" text-8xl text-white mb-9">Polaris studio</h1>
-        <p className=" text-2xl md:text-5xl mx-4">
+        <h1 className=" text-8xl text-white my-auto py-[50px]">Polaris studio</h1>
+        {/* <p className=" text-2xl md:text-5xl mx-4">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
           ratione eos voluptate ad aperiam.
-        </p>
+        </p> */}
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 pt-5">

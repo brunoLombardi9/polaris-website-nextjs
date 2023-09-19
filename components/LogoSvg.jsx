@@ -7,8 +7,8 @@ const LogoSvg = () => {
       data-name="Capa 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1742.78 2391.45"
-      height={120}
-      width={120}
+      height={80}
+      width={80}
       fill={"white"}
       className="mx-auto"
     >

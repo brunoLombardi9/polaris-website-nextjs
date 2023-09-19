@@ -11,7 +11,7 @@ const Galeria = () => {
   const router = useRouter();
   const [category, setCategory] = useState(router.query.category || "todos");
   const { ref, animation } = UseGetAnimation();
-  const options = ["todos", "arte", "flashes", "merch"];
+  const options = ["todos", "arte", "merch"];
 
   useEffect(() => {
     if (allItems.length > 0) {
