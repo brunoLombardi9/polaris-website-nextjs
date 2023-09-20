@@ -31,7 +31,7 @@ const Modal = ({ obj, handleModal, images }) => {
         <img
           src={images[currentIndex]}
           alt={obj.title}
-          className="h-[400px] md:h-[500px]"
+          className="h-[400px] md:h-[500px] rounded"
         />
 
         {hasPrevious && (

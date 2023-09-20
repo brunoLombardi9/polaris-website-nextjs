@@ -18,7 +18,7 @@ const Navbar = () => {
   const pathname = useRouter().pathname;
   const navOptions = [
     { name: "tattoo", url: "/tattoo/todos" },
-    { name: "galeria", url: "/galeria/todos" },
+    { name: "galeria", url: "/galeria" },
     { name: "contacto", url: "/contacto" },
   ];
 
@@ -32,9 +32,11 @@ const Navbar = () => {
       <header
         className={`fixed w-full gap-4 md:gap-8 py-2 md:p-5 bg-black ${transparency} text-white ${transitions} z-10`}
       >
-        <Link href="/" className="md:absolute top-2 left-0" onClick={closeNav}>
-          <LogoNav transitions={transitions} />
-        </Link>
+        <div className="md:absolute top-2 left-0 w-0">
+          <Link href="/" onClick={closeNav}>
+            <LogoNav transitions={transitions} />
+          </Link>
+        </div>
 
         <nav
           className={`${

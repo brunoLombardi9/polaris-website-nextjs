@@ -52,7 +52,7 @@ const TattooView = () => {
         {options.map((opt) => (
           <Link href={`/tattoo/${opt}`} key={opt}>
             <button
-              className={`py-3 px-2 md:px-4  font-bold border-2 ease-in-out duration-200 rounded ${
+              className={`py-3 px-2 md:px-4 font-bold border-2 ease-in-out duration-200 rounded ${
                 category === opt
                   ? "border-orange text-orange"
                   : "hover:border-orange hover:text-orange"

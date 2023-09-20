@@ -2,15 +2,17 @@ import { getDownloadURL, ref } from "firebase/storage";
 import React, { useEffect, useState } from "react";
 import { storage } from "../utils/firebase";
 
-const UseGetImages = (document, collectionName) => {
+const UseGetImages = (document) => {
   const [images, setImages] = useState([]);
+
+  console.log(document)
 
   async function getImageUrl() {
     const imagesArray = [];
 
     document.images.forEach(async (picture) => {
       try {
-        const imageRef = ref(storage, `${collectionName}/${picture}`);
+        const imageRef = ref(storage, picture);
         const url = await getDownloadURL(imageRef);
         imagesArray.push(url);
       } catch (error) {
