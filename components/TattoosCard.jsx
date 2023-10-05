@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
-import UseGetImages from "../hooks/UseGetImages";
+import UseGetTattoosImages from "../hooks/UseGetTattoosImages";
 import Image from "next/image";
 
 const TattoosCard = ({ obj }) => {
-  const images = UseGetImages(obj);
+  const images = UseGetTattoosImages(obj);
   const [showModal, setShowModal] = useState(false);
 
   function handleModal() {
@@ -20,7 +20,7 @@ const TattoosCard = ({ obj }) => {
             width={400}
             height={400}
             alt={obj.title}
-            className="h-full lg:max-h-[80%] rounded w-full cursor-pointer hover:opacity-25 ease-in-out duration-200"
+            className="h-full lg:max-h-[80%] m-auto rounded w-full cursor-pointer hover:opacity-25 ease-in-out duration-200"
             onClick={handleModal}
             loading="lazy"
           />

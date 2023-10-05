@@ -2,8 +2,8 @@ import React from "react";
 import artist from "../public/assets/images/aris-blanco-negro.jpg";
 // import artist from "../public/assets/images/4CF9DD1B-C765-482E-966A-5E6CC85FB02E - copia.jpeg";
 import redFlower from "../public/assets/images/flor roja.jpeg";
-// import blackNWhiteFlower from "../public/assets/images/flor blanco y negro.jpeg";
-import blackNWhiteFlower from "../public/assets/images/tabla.jpeg";
+ import blackNWhiteFlower from "../public/assets/images/flor blanco y negro.jpeg";
+import skateboard from "../public/assets/images/tabla.jpeg";
 import { motion } from "framer-motion";
 import UseGetAnimation from "../hooks/UseGetAnimation.jsx";
 import LogoSvg from "../components/LogoSvg";
@@ -18,6 +18,8 @@ const Home = () => {
   const fifthElement = UseGetAnimation();
   const sixthElement = UseGetAnimation();
   const seventhElement = UseGetAnimation();
+  const eighthElement = UseGetAnimation();
+  const ninthElement = UseGetAnimation();
 
   return (
     <div className="w-full text-white mt-[30px]">
@@ -58,7 +60,7 @@ const Home = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 pt-5 md:pt-0">
         <Image
           src={blackNWhiteFlower}
-          alt="tatuador en blanco y negro"
+          alt="tattoo blanco y negro"
           className="h-full  md:order-2"
           ref={fourthElement.ref}
           style={fourthElement.animation}
@@ -110,6 +112,37 @@ const Home = () => {
           </Link>
         </motion.div>
       </div>
+
+
+      <div className="grid grid-cols-1 md:grid-cols-2 pt-5 md:pt-0">
+        <Image
+          src={skateboard}
+          alt="skateboard"
+          className="h-full  md:order-2"
+          ref={eighthElement.ref}
+          style={eighthElement.animation}
+        />
+
+        <motion.div
+          className="w-full my-auto py-5 md:py-0 flex flex-col justify-evenly md:max-h-[500px] md:order-1"
+          ref={ninthElement.ref}
+          style={ninthElement.animation}
+        >
+          <LogoSvg />
+          <p className="text-center text-2xl md:text-5xl mx-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
+            ratione eos voluptate ad aperiam.
+          </p>
+
+          <Link href="/galeria" className="mx-auto mt-5">
+            <button className="py-3 px-2 md:px-4 font-bold border-2 ease-in-out duration-200 rounded hover:border-orange hover:text-orange">
+              Galería
+            </button>
+          </Link>
+        </motion.div>
+      </div>
+
+
     </div>
   );
 };

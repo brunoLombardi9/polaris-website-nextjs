@@ -1,35 +1,52 @@
-import UseGetAnimation from '@/hooks/UseGetAnimation';
-import UseGetCollection from '@/hooks/UseGetCollection';
-import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import GalleryCarrousel from "@/components/GalleryCarrousel";
+import UseGetAnimation from "@/hooks/UseGetAnimation";
+import UseGetCollection from "@/hooks/UseGetCollection";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 
 const Galeria = () => {
-    const allItems = UseGetCollection("galeria");
-    const [content, setContent] = useState([]);
-    const { ref, animation } = UseGetAnimation();
+  const allItems = UseGetCollection("gallery");
+  const [artItems, setArtItems] = useState([]);
+  const [merchItems, setMerchItems] = useState([]);
+  const { ref, animation } = UseGetAnimation();
+
+  useEffect(() => {
+    const artArray = allItems.filter((item) => item.category === "arte");
+    const merchArray = allItems.filter((item) => item.category === "merch");
+
+    setArtItems(artArray);
+    setMerchItems(merchArray);
+  }, [allItems]);
 
   return (
     <div className="w-full text-white mt-[30px]">
-    <motion.h1
-      className="text-center text-8xl md:text-9xl font-bold"
-      ref={ref}
-      style={animation}
-    >
-      Galería
-    </motion.h1>
+      <motion.h1
+        className="text-center text-8xl md:text-9xl font-bold"
+        ref={ref}
+        style={animation}
+      >
+        Galería
+      </motion.h1>
 
-    <motion.p
-      className="text-center md:text-2xl mt-5 md:max-w-[500px] mx-auto"
-      style={{ ...animation, transition: animation.transition + "0.2s" }}
-    >
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-      similique.
-    </motion.p>
+      <motion.p
+        className="text-center md:text-2xl mt-5 md:max-w-[500px] mx-auto"
+        style={{ ...animation, transition: animation.transition + "0.2s" }}
+      >
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
+        similique.
+      </motion.p>
 
-    <input type="file" />
-   
-  </div>
-  )
-}
+      <div
+        className="flex flex-col mt-[70px] gap-[30px] md:gap-[70px]"
+        style={{ ...animation, transition: animation.transition + "0.4s" }}
+      >
+        <h2 className="text-center font-bold text-5xl">Merch</h2>
+        <GalleryCarrousel content={artItems} />
+        <h2 className="text-center font-bold text-5xl">Arte</h2>
+        <GalleryCarrousel content={merchItems} />
+      </div>
+    </div>
+  );
+};
 
-export default Galeria
+export default Galeria;

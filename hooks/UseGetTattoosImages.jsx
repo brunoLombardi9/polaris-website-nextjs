@@ -2,10 +2,9 @@ import { getDownloadURL, ref } from "firebase/storage";
 import React, { useEffect, useState } from "react";
 import { storage } from "../utils/firebase";
 
-const UseGetImages = (document) => {
+const UseGetTattoosImages = (document) => {
   const [images, setImages] = useState([]);
 
-  console.log(document)
 
   async function getImageUrl() {
     const imagesArray = [];
@@ -29,4 +28,4 @@ const UseGetImages = (document) => {
   return images;
 };
 
-export default UseGetImages;
+export default UseGetTattoosImages;
