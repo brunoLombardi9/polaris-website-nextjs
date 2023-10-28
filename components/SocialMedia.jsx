@@ -6,17 +6,17 @@ const SocialMedia = () => {
     {
       media: "Instagram",
       url: "https://www.instagram.com",
-      component: () => <BsInstagram size={30} />,
+      component: <BsInstagram size={30} />,
     },
     {
       media: "Facebook",
       url: "https://www.facebook.com",
-      component: () => <BsFacebook size={30} />,
+      component: <BsFacebook size={30} />,
     },
     {
       media: "Whatsapp",
       url: "https://www.whatsapp.com",
-      component: () => <BsWhatsapp size={30} />,
+      component: <BsWhatsapp size={30} />,
     },
   ];
 
@@ -34,7 +34,7 @@ const SocialMedia = () => {
             target="_blank"
             className="p-2 border-2 border-white rounded hover:border-orange hover:bg-orange transition-all ease-in-out duration-150"
           >
-            {element.component()}
+            {element.component}
           </a>
         ))}
       </div>

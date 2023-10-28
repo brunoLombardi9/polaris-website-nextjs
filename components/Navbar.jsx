@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./css/Navbar.css";
 import { BiMenuAltRight } from "react-icons/bi";
 import UseGetVerticalPosition from "../hooks/UseGetVerticalPosition";
@@ -9,12 +9,13 @@ import goUp from "../utils/goUp";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { animations150, animations300 } from "@/utils/constants";
 
 const Navbar = () => {
+  const navRef = useRef();
   const [nav, setNav] = useState(false);
   const verticalPosition = UseGetVerticalPosition();
   const transparency = verticalPosition <= 50 ? "md:bg-transparent" : "";
-  const transitions = "transition-all duration-300 ease-in-out";
   const pathname = useRouter().pathname;
   const navOptions = [
     { name: "tattoo", url: "/tattoo/todos" },
@@ -27,21 +28,36 @@ const Navbar = () => {
     goUp();
   }
 
+  function handleClickOutside(e) {
+    if (nav && !navRef.current.contains(e.target)) {
+      setNav(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [nav]);
+
   return (
     <>
       <header
-        className={`fixed w-full gap-4 md:gap-8 py-2 md:p-5 bg-black ${transparency} text-white ${transitions} z-10`}
+        ref={navRef}
+        className={`fixed w-full gap-4 md:gap-8 py-2 md:p-5 bg-black ${transparency} text-white ${animations300} z-10`}
       >
         <div className="md:absolute top-2 left-0 w-fit">
           <Link href="/" onClick={closeNav}>
-            <LogoNav transitions={transitions} />
+            <LogoNav/>
           </Link>
         </div>
 
         <nav
           className={`${
             nav ? "max-h-[500px] opacity-100" : "max-h-0 md:max-h-max opacity-0"
-          } flex flex-col md:flex-row justify-center overflow-hidden md:opacity-100 gap-4 md:gap-8 ${transitions} `}
+          } flex flex-col md:flex-row justify-center overflow-hidden md:opacity-100 gap-4 md:gap-8 ${animations300} `}
         >
           {navOptions.map((option) => (
             <Link
@@ -60,7 +76,7 @@ const Navbar = () => {
         <BiMenuAltRight
           size={40}
           color="white"
-          className="absolute top-5 md:hidden right-3 hover:fill-orange transition-all ease-in-out duration-150 cursor-pointer"
+          className={`absolute top-5 md:hidden right-3 hover:fill-orange ${animations150} cursor-pointer`}
           onClick={() => setNav(!nav)}
         />
       </header>

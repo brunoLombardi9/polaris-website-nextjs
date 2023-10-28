@@ -5,13 +5,11 @@ import skateboard from "../public/assets/images/tabla.jpeg";
 
 export const homeGridData = [
   {
-    imageSide: "left",
     imageSrc: artist,
     altText: "Tatuador",
     text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores ratione eos voluptate ad aperiam.",
   },
   {
-    imageSide: "right",
     imageSrc: blackNWhiteFlower,
     altText: "Tatuaje flor blanco y negro",
     text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores ratione eos voluptate ad aperiam.",
@@ -19,7 +17,6 @@ export const homeGridData = [
     linkHref: "/tattoo/blackwork",
   },
   {
-    imageSide: "left",
     imageSrc: redFlower,
     altText: "Tatuaje flor roja",
     text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores ratione eos voluptate ad aperiam.",
@@ -27,7 +24,6 @@ export const homeGridData = [
     linkHref: "/tattoo/color",
   },
   {
-    imageSide: "right",
     imageSrc: skateboard,
     altText: "Tabla de skate pintada",
     text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores ratione eos voluptate ad aperiam.",
@@ -35,3 +31,7 @@ export const homeGridData = [
     linkHref: "/galeria",
   },
 ];
+
+export const animations200 = "transition-all ease-in-out duration-200";
+export const animations150 = "transition-all ease-in-out duration-150";
+export const animations300 = "transition-all ease-in-out duration-300";

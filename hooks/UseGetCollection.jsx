@@ -13,7 +13,6 @@ const UseGetCollection = (collectionName) => {
       setData(documentsData);
     } catch (error) {
       console.log(error);
-      setData([]);
     }
   }
 

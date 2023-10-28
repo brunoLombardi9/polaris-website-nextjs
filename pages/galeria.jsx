@@ -1,11 +1,12 @@
 import GalleryCarrousel from "@/components/GalleryCarrousel";
+import Loader from "@/components/Loader";
 import UseGetAnimation from "@/hooks/UseGetAnimation";
 import UseGetCollection from "@/hooks/UseGetCollection";
-import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 const Galeria = () => {
   const allItems = UseGetCollection("gallery");
+  // const allItems = []
   const [artItems, setArtItems] = useState([]);
   const [merchItems, setMerchItems] = useState([]);
   const { ref, animation } = UseGetAnimation();
@@ -20,30 +21,36 @@ const Galeria = () => {
 
   return (
     <div className="w-full text-white mt-[30px]">
-      <motion.h1
+      <h1
         className="text-center text-8xl md:text-9xl font-bold"
         ref={ref}
         style={animation}
       >
         Galería
-      </motion.h1>
+      </h1>
 
-      <motion.p
+      <p
         className="text-center md:text-2xl mt-5 md:max-w-[500px] mx-auto"
         style={{ ...animation, transition: animation.transition + "0.2s" }}
       >
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
         similique.
-      </motion.p>
+      </p>
 
       <div
-        className="flex flex-col mt-[70px] gap-[30px] md:gap-[70px]"
+        className="flex flex-col mt-[70px] mb-[70px] gap-[30px] md:gap-[70px] justify-center items-center"
         style={{ ...animation, transition: animation.transition + "0.4s" }}
       >
-        <h2 className="text-center font-bold text-5xl">Merch</h2>
-        <GalleryCarrousel content={artItems} />
-        <h2 className="text-center font-bold text-5xl">Arte</h2>
-        <GalleryCarrousel content={merchItems} />
+        {artItems.length > 0 && merchItems.length > 0 ? (
+          <>
+            <h2 className="text-center font-bold text-5xl">Merch</h2>
+            <GalleryCarrousel content={artItems} />
+            <h2 className="text-center font-bold text-5xl">Arte</h2>
+            <GalleryCarrousel content={merchItems} />
+          </>
+        ) : (
+          <Loader />
+        )}
       </div>
     </div>
   );

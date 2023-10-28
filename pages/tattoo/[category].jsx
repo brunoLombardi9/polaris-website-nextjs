@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import UseGetCollection from "../../hooks/UseGetCollection";
-import { motion } from "framer-motion";
 import UseGetAnimation from "../../hooks/UseGetAnimation";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import ItemsView from "@/components/ItemsView";
+import Loader from "@/components/Loader";
 
 const TattooView = () => {
   const allTattoos = UseGetCollection("tattoos");
@@ -30,22 +30,22 @@ const TattooView = () => {
 
   return (
     <div className="w-full text-white mt-[30px]">
-      <motion.h1
+      <h1
         className="text-center text-8xl md:text-9xl font-bold"
         ref={ref}
         style={animation}
       >
         Tattoo
-      </motion.h1>
+      </h1>
 
-      <motion.p
+      <p
         className="text-center md:text-2xl mt-5 md:max-w-[500px] mx-auto"
         style={{ ...animation, transition: animation.transition + "0.2s" }}
       >
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
         similique.
-      </motion.p>
-      <motion.div
+      </p>
+      <div
         className="w-full flex justify-center items-center gap-2 md:gap-5 my-8"
         style={{ ...animation, transition: animation.transition + "0.4s" }}
       >
@@ -62,14 +62,20 @@ const TattooView = () => {
             </button>
           </Link>
         ))}
-      </motion.div>
+      </div>
 
-      <motion.div
-        className="w-full mb-5"
+      <div
+        className="w-full mb-5 flex flex-col justify-center items-center"
         style={{ ...animation, transition: animation.transition + "0.6s" }}
       >
-        <ItemsView content={content} />
-      </motion.div>
+        {content.length > 0 ? (
+          <ItemsView content={content} />
+        ) : (
+          <div className="m-[70px]">
+            <Loader />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

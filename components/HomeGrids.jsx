@@ -1,9 +1,9 @@
 import UseGetAnimation from "@/hooks/UseGetAnimation";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import LogoSvg from "./LogoSvg";
 import Link from "next/link";
+import { animations200 } from "@/utils/constants";
 
 const HomeGrids = ({ content }) => {
   const textPart = UseGetAnimation();
@@ -33,7 +33,9 @@ const HomeGrids = ({ content }) => {
 
         {content.buttonText && (
           <Link href={content.linkHref} className="mx-auto mt-5">
-            <button className="py-3 px-2 md:px-4 font-bold border-2 ease-in-out duration-200 rounded hover:border-orange hover:text-orange">
+            <button
+              className={`py-3 px-2 md:px-4 font-bold border-2 ${animations200} rounded hover:border-orange hover:text-orange`}
+            >
               {content.buttonText}
             </button>
           </Link>

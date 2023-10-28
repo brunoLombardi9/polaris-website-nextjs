@@ -1,6 +1,7 @@
+import { animations300 } from "@/utils/constants";
 import React, { useState } from "react";
 
-const LogoNav = ({ transitions }) => {
+const LogoNav = () => {
   const [color, setColor] = useState("white");
   const size = 70;
   return (
@@ -12,7 +13,7 @@ const LogoNav = ({ transitions }) => {
       height={size}
       width={size}
       fill={color}
-      className={transitions}
+      className={animations300}
       onMouseEnter={() => setColor("#ce9556")}
       onMouseLeave={() => setColor("white")}
     >

@@ -20,7 +20,18 @@ const ItemsView = ({ content }) => {
 
   return (
     <>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-center p-5 ">
+      {/* <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-center p-5">
+        {
+          <>
+            {currentItems.map((item) => (
+              <TattoosCard obj={item} key={item.title} />
+            ))}
+          </>
+        }
+      </div> */}
+
+
+<div className="w-full flex flex-wrap gap-4 items-center justify-center p-5">
         {
           <>
             {currentItems.map((item) => (
@@ -29,6 +40,7 @@ const ItemsView = ({ content }) => {
           </>
         }
       </div>
+
       <div className="w-full flex gap-3 items-center justify-center">
         {pages.length > 1 &&
           pages.map((page) => (
