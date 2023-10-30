@@ -21,7 +21,7 @@ const Galeria = () => {
   }, [allItems]);
 
   return (
-    <div className="w-[100vw] text-white mt-[30px]">
+    <div className="w-full text-white mt-[30px]">
       <h1
         className="text-center text-8xl md:text-9xl font-bold"
         ref={ref}

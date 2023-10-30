@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 h1 {
   font-family: "PT Sans Narrow", sans-serif;
   font-family: "Smooch", cursive;
@@ -12,9 +13,4 @@ h1 {
 
 h2, p , button{
   font-family: 'DM Sans', sans-serif;
-}
-
-body{
-  min-height: 100vh;
-  width: 100vw;
 }

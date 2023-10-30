@@ -10,18 +10,18 @@ const GalleryCarrousel = ({ content }) => {
   function slideRight() {
     const slider = sliderRef.current;
     slider.scrollLeft = slider.scrollLeft + 360;
-    console.log(slider.scrollLeft)
+    console.log(slider.scrollLeft);
   }
 
   function slideLeft() {
     const slider = sliderRef.current;
     slider.scrollLeft = slider.scrollLeft - 360;
-    console.log(slider.scrollLeft)
+    console.log(slider.scrollLeft);
   }
 
   return (
     <>
-      <div className="relative flex items-center min-h-[200px]">
+      <div className="relative flex items-center min-h-[200px] max-w-[100vw]">
         <MdChevronLeft
           className="opacity-50 cursor-pointer hover:opacity-100"
           onClick={slideLeft}
@@ -32,9 +32,10 @@ const GalleryCarrousel = ({ content }) => {
           className="w-full h-full flex gap-4 overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
         >
           {images.length > 0 &&
-            images.map((item) => (
-              <GalleryImage image={item} key={item}/>
-            ))}
+            images.map((item) => <GalleryImage image={item} key={item} />)}
+          {images.length > 0 &&
+            images.map((item) => <GalleryImage image={item} key={item} />)}
+
         </div>
 
         <MdChevronRight

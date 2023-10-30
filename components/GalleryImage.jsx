@@ -10,7 +10,7 @@ const GalleryImage = ({ image }) => {
     <>
       {loading && (
         <div className="w-[300px] flex justify-center items-center">
-          <ImageLoader />
+        <ImageLoader />
         </div>
       )}
 
