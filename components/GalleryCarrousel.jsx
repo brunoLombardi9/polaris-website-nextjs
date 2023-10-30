@@ -21,7 +21,7 @@ const GalleryCarrousel = ({ content }) => {
 
   return (
     <>
-      <div className="relative flex items-center w-[100vw] min-h-[200px]">
+      <div className="relative flex items-center min-h-[200px]">
         <MdChevronLeft
           className="opacity-50 cursor-pointer hover:opacity-100"
           onClick={slideLeft}
