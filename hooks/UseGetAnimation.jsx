@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
-import { useInView } from "framer-motion";
+import UseIsVisible from "./UseIsVisible";
+
 
 const UseGetAnimation = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = UseIsVisible(ref)
 
   const animation = {
     transform: isInView ? "none" : "translateY(120px)",
