@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TattoosCard from "./TattoosCard";
+import goUp from "@/utils/goUp";
 
 const ItemsView = ({ content }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -12,6 +13,11 @@ const ItemsView = ({ content }) => {
 
   for (let index = 1; index <= totalPages; index++) {
     pages.push(index);
+  }
+
+  function changePage(page){
+    setCurrentPage(page);
+    goUp()
   }
 
   useEffect(() => {
@@ -30,12 +36,12 @@ const ItemsView = ({ content }) => {
         }
       </div>
 
-      <div className="w-full flex gap-3 items-center justify-center">
+      <div className="w-full flex flex-wrap gap-3 items-center justify-center">
         {pages.length > 1 &&
           pages.map((page) => (
             <button
               key={page}
-              onClick={() => setCurrentPage(page)}
+              onClick={() => changePage(page)}
               className={`p-4 border-2 rounded hover:opacity-50 ${
                 page === currentPage && "bg-orange border-orange text-black"
               }`}

@@ -5,7 +5,7 @@ import {
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 import ImageLoader from "./ImageLoader";
-import styles from "./css/TattooCard.module.css"
+import styles from "./css/TattooCard.module.css";
 
 const Modal = ({ obj, handleModal, images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,8 +26,12 @@ const Modal = ({ obj, handleModal, images }) => {
   }
 
   return (
-    <div className="grid place-items-center fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 backdrop-blur-sm z-20">
-      <div className={`flex justify-center items-center relative m-4 shadow-2xl ${styles.tattooCard} bg-black rounded `}>
+    <div className="flex items-center justify-center fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60 backdrop-blur-sm z-20">
+      <div
+        className={`flex justify-center items-center relative m-4 shadow-2xl  bg-black rounded ${
+          loading ? "h-[400px] w-[300px]" : styles.modal
+        }`}
+      >
         <AiOutlineCloseCircle
           onClick={handleModal}
           size={30}
@@ -45,7 +49,7 @@ const Modal = ({ obj, handleModal, images }) => {
         {hasPrevious && !loading && (
           <BsFillArrowLeftCircleFill
             size={40}
-            className="absolute top-[50%] left-[-30px] md:left-[-50px] fill-white hover:fill-orange ease-in-out duration-150"
+            className="absolute top-[50%] left-[-15px] md:left-[-50px] fill-white hover:fill-orange ease-in-out duration-150"
             onClick={handlePrevious}
           />
         )}
@@ -53,7 +57,7 @@ const Modal = ({ obj, handleModal, images }) => {
         {hasNext && !loading && (
           <BsFillArrowRightCircleFill
             size={40}
-            className="absolute top-[50%] right-[-30px] md:right-[-50px] fill-white hover:fill-orange ease-in-out duration-150"
+            className="absolute top-[50%] right-[-15px] md:right-[-50px] fill-white hover:fill-orange ease-in-out duration-150"
             onClick={handleNext}
           />
         )}

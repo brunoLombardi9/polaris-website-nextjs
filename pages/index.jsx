@@ -31,7 +31,7 @@ const Home = () => {
         </div>
 
         {homeGridData.map((grid) => (
-          <HomeGrids content={grid} key={grid} />
+          <HomeGrids content={grid} key={grid.altText} />
         ))}
       </main>
     </>

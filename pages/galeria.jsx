@@ -6,10 +6,11 @@ import React, { useEffect, useState } from "react";
 
 const Galeria = () => {
   const allItems = UseGetCollection("gallery");
-  // const allItems = []
   const [artItems, setArtItems] = useState([]);
   const [merchItems, setMerchItems] = useState([]);
   const { ref, animation } = UseGetAnimation();
+
+  console.log(artItems)
 
   useEffect(() => {
     const artArray = allItems.filter((item) => item.category === "arte");
@@ -42,12 +43,12 @@ const Galeria = () => {
         style={{ ...animation, transition: animation.transition + "0.4s" }}
       >
         {artItems.length > 0 && merchItems.length > 0 ? (
-          <>
+          <div className="flex flex-col gap-12">
             <h2 className="text-center font-bold text-5xl">Merch</h2>
             <GalleryCarrousel content={artItems} />
             <h2 className="text-center font-bold text-5xl">Arte</h2>
             <GalleryCarrousel content={merchItems} />
-          </>
+          </div>
         ) : (
           <Loader />
         )}

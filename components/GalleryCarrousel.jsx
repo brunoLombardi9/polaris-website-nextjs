@@ -1,6 +1,7 @@
 import UseGetGalleryImages from "@/hooks/UseGetGalleryImages";
 import React, { useRef } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import GalleryImage from "./GalleryImage";
 
 const GalleryCarrousel = ({ content }) => {
   const images = UseGetGalleryImages(content);
@@ -8,17 +9,19 @@ const GalleryCarrousel = ({ content }) => {
 
   function slideRight() {
     const slider = sliderRef.current;
-    slider.scrollLeft = slider.scrollLeft + 500;
+    slider.scrollLeft = slider.scrollLeft + 360;
+    console.log(slider.scrollLeft)
   }
 
   function slideLeft() {
     const slider = sliderRef.current;
-    slider.scrollLeft = slider.scrollLeft - 500;
+    slider.scrollLeft = slider.scrollLeft - 360;
+    console.log(slider.scrollLeft)
   }
 
   return (
     <>
-      <div className="relative flex items-center">
+      <div className="relative flex items-center w-full min-h-[200px]">
         <MdChevronLeft
           className="opacity-50 cursor-pointer hover:opacity-100"
           onClick={slideLeft}
@@ -26,16 +29,11 @@ const GalleryCarrousel = ({ content }) => {
         />
         <div
           ref={sliderRef}
-          className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
+          className="w-full h-full flex gap-4 overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
         >
           {images.length > 0 &&
             images.map((item) => (
-              <img
-                className="w-[220px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300"
-                src={item}
-                key={item}
-                alt="/"
-              />
+              <GalleryImage image={item} key={item}/>
             ))}
         </div>
 
