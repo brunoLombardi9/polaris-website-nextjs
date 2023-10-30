@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 import UseGetTattoosImages from "../hooks/UseGetTattoosImages";
 import ImageLoader from "./ImageLoader";
+import styles from "./css/TattooCard.module.css"
 
 const TattoosCard = ({ obj }) => {
   const images = UseGetTattoosImages(obj);
@@ -14,7 +15,7 @@ const TattoosCard = ({ obj }) => {
 
   return (
     <>
-      <div className="text-darkGray flex justify-center items-center w-[300px] h-[400px] ">
+      <div className={`text-darkGray flex justify-center items-center ${styles.tattooCard}  `}>
         {loading && <ImageLoader />}
         <img
           src={images[0]}

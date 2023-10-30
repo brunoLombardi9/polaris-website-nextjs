@@ -1,0 +1,18 @@
+.tattooCard{
+    height: 400px;
+    width: 300px;
+}
+
+@media (max-height: 400px)  {
+    .tattooCard{
+        height: 300px;
+        width: 225px;
+    }
+}
+
+@media (min-height: 401px) and (min-width: 600px)  {
+    .modal{
+        height: 300px;
+        width: auto;
+    }
+}
