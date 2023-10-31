@@ -17,7 +17,7 @@ const Contacto = () => {
       </h1>
 
       <div
-        className="grid grid-cols-1 md:grid-cols-2 wallpaper py-10 wallpaperContacto opacity-20 "
+        className="grid grid-cols-1 md:grid-cols-2 wallpaper py-10 wallpaperContacto opacity-20"
         style={{ ...animation, transition: animation.transition + "0.2s" }}
       >
         <SocialMedia />

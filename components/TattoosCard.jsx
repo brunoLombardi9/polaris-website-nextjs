@@ -27,7 +27,6 @@ const TattoosCard = ({ obj }) => {
           } h-full w-full rounded cursor-pointer hover:opacity-25 ease-in-out duration-200`}
           onClick={handleModal}
           onLoad={() => setLoading(false)}
-          loading="lazy"
         />
       </div>
 
