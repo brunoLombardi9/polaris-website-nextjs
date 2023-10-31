@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 import UseGetTattoosImages from "../hooks/UseGetTattoosImages";
 import ImageLoader from "./ImageLoader";
-import styles from "./css/TattooCard.module.css"
+import styles from "./css/TattooCard.module.css";
 
 const TattoosCard = ({ obj }) => {
   const images = UseGetTattoosImages(obj);
@@ -15,7 +15,9 @@ const TattoosCard = ({ obj }) => {
 
   return (
     <>
-      <div className={`text-darkGray flex justify-center items-center ${styles.tattooCard}  `}>
+      <div
+        className={`text-darkGray flex justify-center items-center ${styles.tattooCard}  `}
+      >
         {loading && <ImageLoader />}
         <img
           src={images[0]}
@@ -25,6 +27,7 @@ const TattoosCard = ({ obj }) => {
           } h-full w-full rounded cursor-pointer hover:opacity-25 ease-in-out duration-200`}
           onClick={handleModal}
           onLoad={() => setLoading(false)}
+          loading="lazy"
         />
       </div>
 

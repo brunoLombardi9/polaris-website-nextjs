@@ -19,6 +19,7 @@ const HomeGrids = ({ content }) => {
         } h-full`}
         ref={imagePart.ref}
         style={imagePart.animation}
+        priority={true}
       />
 
       <div
