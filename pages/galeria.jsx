@@ -10,8 +10,6 @@ const Galeria = () => {
   const [merchItems, setMerchItems] = useState([]);
   const { ref, animation } = UseGetAnimation();
 
-  console.log(artItems)
-
   useEffect(() => {
     const artArray = allItems.filter((item) => item.category === "arte");
     const merchArray = allItems.filter((item) => item.category === "merch");

@@ -11,16 +11,19 @@ const HomeGrids = ({ content }) => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">
-      <Image
-        src={content.imageSrc}
-        alt="tatuador en blanco y negro"
+      <div
         className={`${
           content.imageSide === "left" ? "md:order-1" : "md:order-2"
         } h-full`}
-        ref={imagePart.ref}
-        style={imagePart.animation}
-        priority={true}
-      />
+      >
+        <Image
+          src={content.imageSrc}
+          alt="tatuador en blanco y negro"
+          ref={imagePart.ref}
+          style={imagePart.animation}
+          priority={true}
+        />
+      </div>
 
       <div
         className={`${

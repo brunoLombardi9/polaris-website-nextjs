@@ -8,7 +8,7 @@ const UseIsVisible = (ref) => {
     if (isIntersecting && !hasIntersected) {
       setHasIntersected(true);
     }
-  }, [isIntersecting, hasIntersected]);
+  }, [isIntersecting]);
 
   useEffect(() => {
     if (!hasIntersected) {
@@ -21,7 +21,7 @@ const UseIsVisible = (ref) => {
         observer.disconnect();
       };
     }
-  }, [hasIntersected, ref]);
+  }, [hasIntersected]);
 
   return isIntersecting;
 };
