@@ -23,7 +23,6 @@ const GalleryImage = ({ image }) => {
         onLoad={() => setLoading(false)}
         onClick={() => setModal(true)}
         alt="/"
-        loading="lazy"
       />
       {modal && (
         <GalleryModal image={image} closeModal={() => setModal(false)} />
