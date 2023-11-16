@@ -31,7 +31,7 @@ const TattooView = () => {
   return (
     <div className="w-full text-white mt-[30px]">
       <h1
-        className="text-center text-8xl md:text-9xl font-bold"
+        className="text-center text-8xl md:text-9xl"
         ref={ref}
         style={animation}
       >
@@ -42,8 +42,7 @@ const TattooView = () => {
         className="text-center md:text-2xl mt-5 md:max-w-[500px] mx-auto"
         style={{ ...animation, transition: animation.transition + "0.2s" }}
       >
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-        similique.
+        Nuestro portfolio. Checkea la variedad de nuestros trabajos.
       </p>
       <div
         className="w-full flex justify-center items-center gap-2 md:gap-5 my-8"

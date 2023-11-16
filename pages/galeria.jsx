@@ -21,7 +21,7 @@ const Galeria = () => {
   return (
     <div className="w-full text-white mt-[30px]">
       <h1
-        className="text-center text-8xl md:text-9xl font-bold"
+        className="text-center text-8xl md:text-9xl"
         ref={ref}
         style={animation}
       >
@@ -32,8 +32,7 @@ const Galeria = () => {
         className="text-center md:text-2xl mt-5 md:max-w-[500px] mx-auto"
         style={{ ...animation, transition: animation.transition + "0.2s" }}
       >
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
-        similique.
+       Descubre nuestra colección de obras y articulos intervenidos.
       </p>
 
       <div

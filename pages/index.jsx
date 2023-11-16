@@ -30,7 +30,7 @@ const Home = () => {
             Polaris studio
           </h1> */}
 
-      <div className="w-[300px] md:w-[600px] m-auto">
+      <div className="w-[300px] md:w-[600px] m-auto mt-[50px] md:mt-0">
       <LogoFooter/>
       </div>
         </div>

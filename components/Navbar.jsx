@@ -94,7 +94,7 @@ const Navbar = () => {
         <Image
           src={wallpaper}
           alt="tatuador"
-          className="h-[300px] md:h-[450px] object-cover w-full"
+          className="h-[450px] hidden md:block object-cover w-full"
           priority={true}
         />
       )}

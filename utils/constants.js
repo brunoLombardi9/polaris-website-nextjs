@@ -7,28 +7,33 @@ export const homeGridData = [
   {
     imageSrc: artist,
     altText: "Tatuador",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores ratione eos voluptate ad aperiam.",
+    text: "Los tatuajes son una forma popular de autoexpresión. y lo han sido desde el principio de las eras.",
   },
   {
     imageSrc: blackNWhiteFlower,
     altText: "Tatuaje flor blanco y negro",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores ratione eos voluptate ad aperiam.",
+    text: "Diseños realizados únicamente con tinta negra para crear piezas oscuras que contrastan con la piel.",
     buttonText: "Tattoo blackwork",
     linkHref: "/tattoo/blackwork",
   },
   {
     imageSrc: redFlower,
     altText: "Tatuaje flor roja",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores ratione eos voluptate ad aperiam.",
+    text: "Tattoos a color con lienas gruesas y finas, estilo Tradicional y NewTradicional.",
     buttonText: "Tattoo a color",
     linkHref: "/tattoo/color",
   },
   {
     imageSrc: skateboard,
     altText: "Tabla de skate pintada",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores ratione eos voluptate ad aperiam.",
+    text: "« No hay reglas en el arte » Francisco de Goya",
     buttonText: "Galería",
     linkHref: "/galeria",
+  },
+  {
+    imageSrc: skateboard,
+    altText: "Tabla de skate pintada",
+    text: "Estudio privado y club de arte. Espacio de libre imaginación, alta frecuencia y vibración. Desde 2018",
   },
 ];
 

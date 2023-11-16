@@ -10,7 +10,7 @@ const Footer = () => {
       </Link>
 
       <p className="text-white text-center text-sm md:text-base px-2">
-        Villa Adelina, Provincia de Buenos Aires. Todos los derechos reservados ©.
+       Munro, Vicente Lopez. Buenos Aires, Argentina. Todos los derechos reservados ©.
       </p>
     </footer>
   );

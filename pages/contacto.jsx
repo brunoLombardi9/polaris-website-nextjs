@@ -9,7 +9,7 @@ const Contacto = () => {
   return (
     <div className="w-full text-white mt-[30px]">
       <h1
-        className="text-center text-8xl md:text-9xl font-bold mb-7"
+        className="text-center text-8xl md:text-9xl mb-7"
         ref={ref}
         style={animation}
       >
